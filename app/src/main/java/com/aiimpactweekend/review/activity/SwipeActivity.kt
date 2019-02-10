@@ -1,10 +1,12 @@
 package com.aiimpactweekend.review.activity
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.aiimpactweekend.review.R
 import com.aiimpactweekend.review.adapter.CardAdapter
+import com.aiimpactweekend.review.constants.Direction
 import com.aiimpactweekend.review.constants.sampleApplicant
 import com.aiimpactweekend.review.generator.generateApplicant
 import com.aiimpactweekend.review.listener.SwipeListener
@@ -67,8 +69,10 @@ class SwipeActivity : AppCompatActivity() {
             return true
         }
 
-        override fun onFling(indices: IntArray) {
+        override fun onFling(direction: Direction) {
             applicants.removeAt(0)
+            Snackbar.make(container, direction.toString(), Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
         }
 
         override fun onUnsuccessfulFling() {

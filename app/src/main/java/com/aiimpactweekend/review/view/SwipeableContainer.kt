@@ -15,11 +15,8 @@ import com.aiimpactweekend.review.adapter.CardAdapter
 import com.aiimpactweekend.review.animator.FlingAnimator
 import com.aiimpactweekend.review.animator.bounceBack
 import com.aiimpactweekend.review.animator.scaleTo
-import com.aiimpactweekend.review.constants.DragState
+import com.aiimpactweekend.review.constants.*
 import com.aiimpactweekend.review.constants.DragState.*
-import com.aiimpactweekend.review.constants.isDraggable
-import com.aiimpactweekend.review.constants.isPickedUp
-import com.aiimpactweekend.review.constants.isPickedUpFromBottom
 import com.aiimpactweekend.review.listener.SwipeListener
 import com.aiimpactweekend.review.util.*
 import timber.log.Timber
@@ -146,7 +143,7 @@ class SwipeableContainer @JvmOverloads constructor(
         val successfulFling = swipeListener?.isFlingSuccessful(contentIndices)
         views.flingAll(successfulFling ?: true)
         flingAnimator.resetTracker()
-        swipeListener?.onFling(contentIndices)
+        swipeListener?.onFling(if (views[0].translationX < 0) Direction.LEFT else Direction.RIGHT)
     }
 
     private val pickedUpChildren: List<View>
