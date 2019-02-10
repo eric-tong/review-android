@@ -18,7 +18,6 @@ class CardView @JvmOverloads constructor(
 ) : ConstraintLayout(context, attrs, defStyle) {
     init {
         inflate(getContext(), R.layout.view_card, this)
-        setApplicant(sampleApplicant)
         background = cardBackground
     }
 

@@ -3,11 +3,13 @@ package com.aiimpactweekend.review.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.TextView
 import com.aiimpactweekend.review.R
 import com.aiimpactweekend.review.adapter.CardAdapter
+import com.aiimpactweekend.review.constants.sampleApplicant
+import com.aiimpactweekend.review.generator.generateApplicant
 import com.aiimpactweekend.review.listener.SwipeListener
 import com.aiimpactweekend.review.util.setFullscreen
+import com.aiimpactweekend.review.view.CardView
 import kotlinx.android.synthetic.main.activity_swipe.*
 
 class SwipeActivity : AppCompatActivity() {
@@ -36,14 +38,14 @@ class SwipeActivity : AppCompatActivity() {
 
     private val cardAdapter = object : CardAdapter {
         override fun loadCurrent(view: View, index: Int) {
-            if (view is TextView) {
-                view.text = "1234"
+            if (view is CardView) {
+                view.setApplicant(generateApplicant())
             }
         }
 
         override fun loadNext(view: View, index: Int) {
-            if (view is TextView) {
-                view.text = "1234"
+            if (view is CardView) {
+                view.setApplicant(generateApplicant())
             }
         }
     }

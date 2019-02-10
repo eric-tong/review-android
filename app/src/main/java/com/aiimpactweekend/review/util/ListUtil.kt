@@ -1,5 +1,7 @@
 package com.aiimpactweekend.review.util
 
+import android.os.Build.VERSION_CODES.N
+
 fun <T : Any?> List<T>?.isNullorEmpty(): Boolean {
     return this == null || isEmpty()
 }
@@ -20,4 +22,17 @@ fun <T : Any?> List<T>.areAllEqual(): Boolean {
     val firstElement = first()
     forEach { if (it != firstElement) return false }
     return true
+}
+
+fun Array<String>.getRandom(): Array<String> {
+    var n = 3
+    val result = arrayOf("", "", "")
+    while (n > 0) {
+        val rand = this.random()
+        if (!result.contains(rand)) {
+            result[n-1] = rand
+            n--
+        }
+    }
+    return result
 }
