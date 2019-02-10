@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="timer_icon_description">Icon of timer</string>
+    <string name="timer_overlay_description">Time boost</string>
+</resources>

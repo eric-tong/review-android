@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_length">220dp</dimen>
+    <dimen name="card_radius">30dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_shadow_radius">10dp</dimen>
+    <dimen name="card_fling_threshold">120dp</dimen>
+    <dimen name="card_fling_velocity">700dp</dimen>
+    <dimen name="card_max_fling_velocity">1000dp</dimen>
+    <dimen name="card_shadow_displacement">4dp</dimen>
+    <integer name="card_rotation">26</integer>
+    <integer name="card_stack_scale">90</integer>
+    <color name="card_shadow">#15000000</color>
+</resources>
