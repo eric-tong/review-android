@@ -2,8 +2,8 @@ package com.aiimpactweekend.review.view
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.support.constraint.ConstraintLayout
 import android.util.AttributeSet
-import android.widget.TextView
 import com.aiimpactweekend.review.R
 import com.aiimpactweekend.review.drawable.CardBackground
 
@@ -11,10 +11,10 @@ import com.aiimpactweekend.review.drawable.CardBackground
 class CardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyle: Int = 0,
-    defStyleRes: Int = R.style.CardTextView
-) : TextView(context, attrs, defStyle, defStyleRes) {
+    defStyle: Int = 0
+) : ConstraintLayout(context, attrs, defStyle) {
     init {
+        inflate(getContext(), R.layout.view_card, this)
         background = cardBackground
     }
 
