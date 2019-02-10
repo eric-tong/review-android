@@ -1,5 +1,6 @@
 package com.aiimpactweekend.review.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -12,7 +13,6 @@ import com.aiimpactweekend.review.generator.generateApplicant
 import com.aiimpactweekend.review.listener.SwipeListener
 import com.aiimpactweekend.review.model.Applicant
 import com.aiimpactweekend.review.util.setFullscreen
-import com.aiimpactweekend.review.util.shift
 import com.aiimpactweekend.review.view.CardView
 import kotlinx.android.synthetic.main.activity_swipe.*
 
@@ -51,7 +51,7 @@ class SwipeActivity : AppCompatActivity() {
 
         override fun loadNext(view: View, index: Int) {
             if (view is CardView) {
-                while(applicants.size < 2) applicants.add(generateApplicant())
+                while (applicants.size < 2) applicants.add(generateApplicant())
                 view.setApplicant(applicants[1])
             }
         }
@@ -75,7 +75,13 @@ class SwipeActivity : AppCompatActivity() {
             if (applicant.isRecommended && direction == Direction.LEFT) {
                 val message = "${applicant.firstName} might be a good fit for your role"
                 Snackbar.make(container, message, Snackbar.LENGTH_LONG)
-                    .setAction("Review", View.OnClickListener {  })
+                    .setAction("Review", View.OnClickListener {
+                        startActivity(
+                            Intent(this@SwipeActivity, DetailActivity::class.java).apply {
+                                putExtra("Applicant", applicant)
+                            }
+                        )
+                    })
                     .show()
             }
             applicants.removeAt(0)

@@ -6,7 +6,7 @@ import com.aiimpactweekend.review.util.getRandom
 
 fun generateApplicant(): Applicant {
 
-    val isFemale = Math.random() < 0.2
+    val isFemale = Math.random() < 0.3
     val isRecommended = when {
         isFemale -> Math.random() < 0.9
         else -> Math.random() < 0.2
