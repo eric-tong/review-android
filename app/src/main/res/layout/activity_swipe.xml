@@ -9,12 +9,14 @@
 
     <com.aiimpactweekend.review.view.CardView
             android:id="@+id/bottomCard"
-            android:layout_width="220dp"
-            android:layout_height="220dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="350dp"
+            android:layout_height="500dp"
+            android:layout_marginBottom="100dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="50" app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+            tools:text="50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="100dp"
             app:layout_constraintTop_toTopOf="parent"/>
 
 </com.aiimpactweekend.review.view.SwipeableContainer>
