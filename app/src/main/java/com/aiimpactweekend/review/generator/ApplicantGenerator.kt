@@ -9,7 +9,7 @@ fun generateApplicant(): Applicant {
     val isFemale = Math.random() < 0.3
     val isRecommended = when {
         isFemale -> Math.random() < 0.9
-        else -> Math.random() < 0.2
+        else -> false
     }
     val firstName = when {
         isFemale ->  majorityFemaleFirstNames.random()
