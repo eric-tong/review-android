@@ -33,7 +33,6 @@
             app:layout_constraintTop_toBottomOf="@id/tagViewBottom"
             tools:text="Jennifer Chan" app:layout_constraintStart_toStartOf="parent"
             android:fontFamily="sans-serif-light" android:textSize="24sp"
-            android:text="Jennifer Chan"
             android:layout_marginTop="32dp"/>
     <ImageView
             android:layout_width="wrap_content"
@@ -48,7 +47,7 @@
             android:layout_marginStart="16dp"
             app:layout_constraintTop_toTopOf="@+id/workIcon"
             app:layout_constraintBottom_toBottomOf="@+id/workIcon" tools:text="Product Manager @ InvestCo."
-            android:text="Product Manager @ InvestCo."/>
+    />
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,7 +55,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/workPositionTv"
             tools:text="August 2013 - Current (4 Year, 3 months)"
-            android:textSize="10sp" android:text="August 2013 - Current (4 Year, 3 months)"/>
+            android:textSize="10sp"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_school_black_24dp"
@@ -70,12 +69,12 @@
             android:layout_marginStart="16dp"
             app:layout_constraintTop_toTopOf="@+id/schoolIcon"
             app:layout_constraintBottom_toBottomOf="@+id/schoolIcon" tools:text="MSc Mechanical Engineering"
-            android:text="MSc Mechanical Engineering"/>
+    />
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/schoolIconTv" app:layout_constraintStart_toStartOf="@+id/schoolDegreeTv"
+            android:id="@+id/schoolNameTv" app:layout_constraintStart_toStartOf="@+id/schoolDegreeTv"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/schoolDegreeTv" tools:text="University of Exeter, 2013"
-            android:textSize="10sp" android:text="University of Exeter, 2013"/>
+            android:textSize="10sp"/>
 </android.support.constraint.ConstraintLayout>

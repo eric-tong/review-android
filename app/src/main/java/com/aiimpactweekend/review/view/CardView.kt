@@ -5,7 +5,10 @@ import android.graphics.drawable.Drawable
 import android.support.constraint.ConstraintLayout
 import android.util.AttributeSet
 import com.aiimpactweekend.review.R
+import com.aiimpactweekend.review.constants.sampleApplicant
 import com.aiimpactweekend.review.drawable.CardBackground
+import com.aiimpactweekend.review.model.Applicant
+import kotlinx.android.synthetic.main.view_card.view.*
 
 
 class CardView @JvmOverloads constructor(
@@ -15,7 +18,19 @@ class CardView @JvmOverloads constructor(
 ) : ConstraintLayout(context, attrs, defStyle) {
     init {
         inflate(getContext(), R.layout.view_card, this)
+        setApplicant(sampleApplicant)
         background = cardBackground
+    }
+
+    fun setApplicant(applicant: Applicant) {
+        nameTv.text = applicant.name
+        workPositionTv.text = "${applicant.workPosition} @ ${applicant.workName}"
+        workDurationTv.text = "Feb ${2019 - applicant.workDuration} - Current (${applicant.workDuration} years)"
+        schoolDegreeTv.text = applicant.schoolDegree
+        schoolNameTv.text = "${applicant.schoolName}, ${applicant.schoolYear}"
+        arrayOf(tagViewTop, tagViewMiddle, tagViewBottom).forEachIndexed { index, tagView ->
+            tagView.setTrait(applicant.traits[index])
+        }
     }
 
     private val cardBackground: Drawable
