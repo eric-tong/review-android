@@ -3,7 +3,8 @@ package com.aiimpactweekend.review.constants
 import com.aiimpactweekend.review.model.Applicant
 
 val sampleApplicant = Applicant(
-    "Jennifer Chan",
+    "Jennifer",
+    "Chan",
     "Product Manager",
     "InvestCo.",
     4,

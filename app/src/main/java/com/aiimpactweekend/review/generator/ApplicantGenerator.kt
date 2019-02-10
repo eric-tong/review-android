@@ -8,7 +8,7 @@ fun generateApplicant(): Applicant {
 
     val isFemale = Math.random() < 0.2
     val isRecommended = when {
-        isFemale -> Math.random() < 0.8
+        isFemale -> Math.random() < 0.9
         else -> Math.random() < 0.2
     }
     val firstName = when {
@@ -26,7 +26,8 @@ fun generateApplicant(): Applicant {
     val traits = allTraits.getRandom()
 
     return Applicant(
-        "$firstName $lastName",
+        firstName,
+        lastName,
         workPosition,
         workName,
         workDuration,

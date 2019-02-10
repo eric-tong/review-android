@@ -1,7 +1,8 @@
 package com.aiimpactweekend.review.model
 
 data class Applicant(
-    val name: String,
+    val firstName: String,
+    val lastName: String,
     val workPosition: String,
     val workName: String,
     val workDuration: Int,

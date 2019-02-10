@@ -12,6 +12,7 @@ import com.aiimpactweekend.review.generator.generateApplicant
 import com.aiimpactweekend.review.listener.SwipeListener
 import com.aiimpactweekend.review.model.Applicant
 import com.aiimpactweekend.review.util.setFullscreen
+import com.aiimpactweekend.review.util.shift
 import com.aiimpactweekend.review.view.CardView
 import kotlinx.android.synthetic.main.activity_swipe.*
 
@@ -70,9 +71,14 @@ class SwipeActivity : AppCompatActivity() {
         }
 
         override fun onFling(direction: Direction) {
+            val applicant = applicants[0]
+            if (applicant.isRecommended && direction == Direction.LEFT) {
+                val message = "${applicant.firstName} might be a good fit for your role"
+                Snackbar.make(container, message, Snackbar.LENGTH_LONG)
+                    .setAction("Review", View.OnClickListener {  })
+                    .show()
+            }
             applicants.removeAt(0)
-            Snackbar.make(container, direction.toString(), Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
         }
 
         override fun onUnsuccessfulFling() {

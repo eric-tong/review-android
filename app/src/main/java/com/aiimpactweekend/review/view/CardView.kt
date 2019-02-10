@@ -25,7 +25,7 @@ class CardView @JvmOverloads constructor(
 
     fun setApplicant(applicant: Applicant) {
         this.applicant = applicant
-        nameTv.text = applicant.name
+        nameTv.text = "${applicant.firstName} ${applicant.lastName}"
         workPositionTv.text = "${applicant.workPosition} @ ${applicant.workName}"
         workDurationTv.text = "Feb ${2019 - applicant.workDuration} - Current (${applicant.workDuration} years)"
         schoolDegreeTv.text = applicant.schoolDegree
