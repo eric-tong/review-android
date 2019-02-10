@@ -3,16 +3,38 @@
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:layout_width="match_parent"
-                                             android:layout_height="match_parent" android:padding="24dp">
+                                             android:layout_height="match_parent" android:paddingStart="24dp"
+                                             android:paddingEnd="24dp" android:paddingTop="56dp">
 
+    <com.aiimpactweekend.review.view.TagView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/tagViewTop"/>
+
+    <com.aiimpactweekend.review.view.TagView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tagViewTop"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/tagViewMiddle" android:layout_marginTop="16dp"/>
+
+    <com.aiimpactweekend.review.view.TagView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tagViewMiddle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/tagViewBottom" android:layout_marginTop="16dp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/nameTv"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tagViewBottom"
             tools:text="Jennifer Chan" app:layout_constraintStart_toStartOf="parent"
-            android:fontFamily="sans-serif-light" android:textSize="24sp" android:layout_margin="0dp"
-            android:layout_marginTop="72dp" android:layout_marginStart="72dp" android:text="Jennifer Chan"/>
+            android:fontFamily="sans-serif-light" android:textSize="24sp"
+            android:text="Jennifer Chan"
+            android:layout_marginTop="32dp"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_work_black_24dp"
