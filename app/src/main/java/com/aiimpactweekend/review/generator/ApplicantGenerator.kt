@@ -5,7 +5,17 @@ import com.aiimpactweekend.review.model.Applicant
 import com.aiimpactweekend.review.util.getRandom
 
 fun generateApplicant(): Applicant {
-    val firstName = majorityMaleFirstNames.random()
+
+    val isFemale = Math.random() < 0.2
+    val isRecommended = when {
+        isFemale -> Math.random() < 0.8
+        else -> Math.random() < 0.2
+    }
+    val firstName = when {
+        isFemale ->  majorityFemaleFirstNames.random()
+        else -> majorityMaleFirstNames.random()
+    }
+
     val lastName = majorityLastNames.random()
     val workPosition = workPositions.random()
     val workName = "${companyNames.random()} ${companyTypes.random()}"
@@ -23,6 +33,7 @@ fun generateApplicant(): Applicant {
         schoolDegree,
         schoolName,
         schoolYear,
-        traits
+        traits,
+        isRecommended
     )
 }

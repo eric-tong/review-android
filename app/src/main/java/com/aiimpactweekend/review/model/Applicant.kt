@@ -8,5 +8,6 @@ data class Applicant(
     val schoolDegree: String,
     val schoolName: String,
     val schoolYear: Int,
-    val traits: Array<String>
+    val traits: Array<String>,
+    val isRecommended: Boolean
     )
