@@ -8,11 +8,14 @@ import com.aiimpactweekend.review.adapter.CardAdapter
 import com.aiimpactweekend.review.constants.sampleApplicant
 import com.aiimpactweekend.review.generator.generateApplicant
 import com.aiimpactweekend.review.listener.SwipeListener
+import com.aiimpactweekend.review.model.Applicant
 import com.aiimpactweekend.review.util.setFullscreen
 import com.aiimpactweekend.review.view.CardView
 import kotlinx.android.synthetic.main.activity_swipe.*
 
 class SwipeActivity : AppCompatActivity() {
+
+    private val applicants: MutableList<Applicant> = mutableListOf(sampleApplicant)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +42,14 @@ class SwipeActivity : AppCompatActivity() {
     private val cardAdapter = object : CardAdapter {
         override fun loadCurrent(view: View, index: Int) {
             if (view is CardView) {
-                view.setApplicant(generateApplicant())
+                view.setApplicant(applicants[0])
             }
         }
 
         override fun loadNext(view: View, index: Int) {
             if (view is CardView) {
-                view.setApplicant(generateApplicant())
+                while(applicants.size < 2) applicants.add(generateApplicant())
+                view.setApplicant(applicants[1])
             }
         }
     }
@@ -64,7 +68,7 @@ class SwipeActivity : AppCompatActivity() {
         }
 
         override fun onFling(indices: IntArray) {
-
+            applicants.removeAt(0)
         }
 
         override fun onUnsuccessfulFling() {

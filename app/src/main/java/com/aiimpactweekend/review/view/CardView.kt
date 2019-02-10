@@ -16,12 +16,15 @@ class CardView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : ConstraintLayout(context, attrs, defStyle) {
+    private var applicant: Applicant = sampleApplicant
+
     init {
         inflate(getContext(), R.layout.view_card, this)
         background = cardBackground
     }
 
     fun setApplicant(applicant: Applicant) {
+        this.applicant = applicant
         nameTv.text = applicant.name
         workPositionTv.text = "${applicant.workPosition} @ ${applicant.workName}"
         workDurationTv.text = "Feb ${2019 - applicant.workDuration} - Current (${applicant.workDuration} years)"
